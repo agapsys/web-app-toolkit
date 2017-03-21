@@ -51,7 +51,7 @@ public class MockedWebApplication extends AbstractWebApplication {
 
         try {
             super.afterApplicationStop();
-            FileUtils.deleteFile(getDirectory());
+            FileUtils.deleteFile(getDirectory().getParentFile());
         } catch (IOException ex) {
             throw new RuntimeException(ex);
         }
