@@ -15,8 +15,7 @@
  */
 package com.agapsys.web.toolkit;
 
-import com.agapsys.web.toolkit.modules.LogModule;
-import com.agapsys.web.toolkit.modules.LogModule.ConsoleLogStream;
+import com.agapsys.web.toolkit.services.LogService;
 import com.agapsys.web.toolkit.utils.FileUtils;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -46,23 +45,24 @@ public class MockedWebApplication extends AbstractWebApplication {
     }
 
     @Override
-    protected void afterApplicationStop() {
-        super.afterApplicationStop();
-
+    protected void afterStop() {
+        super.afterStop();
+        
         try {
-            super.afterApplicationStop();
             FileUtils.deleteFile(getDirectory().getParentFile());
         } catch (IOException ex) {
             throw new RuntimeException(ex);
         }
+        
     }
 
     @Override
-    protected void beforeApplicationStart() {
-        super.beforeApplicationStart();
-
-        LogModule logModule = getModule(LogModule.class);
-        logModule.addStream(new ConsoleLogStream());
+    protected void beforeStart() {
+        super.beforeStart();
+        
+        LogService customLogService = new LogService();
+        customLogService.addLogger(new LogService.ConsoleLogger());
+        registerService(customLogService);
     }
 
 }

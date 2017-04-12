@@ -16,6 +16,7 @@
 
 package com.agapsys.web.toolkit;
 
+import com.agapsys.web.toolkit.filters.AttributeServiceFilter;
 import com.agapsys.jee.StacktraceErrorHandler;
 import com.agapsys.jee.TestingServletContainer;
 import javax.servlet.http.HttpServlet;
@@ -40,7 +41,7 @@ public class WebApplicationContainer<WAC extends WebApplicationContainer<WAC>> e
             throw new IllegalArgumentException("Null web application");
 
         super.registerServletContextListener(webApp);
-        super.registerFilter(WebApplicationFilter.class, "/*");
+        super.registerFilter(AttributeServiceFilter.class, "/*");
         super.setErrorHandler(new StacktraceErrorHandler());
     }
 

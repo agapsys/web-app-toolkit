@@ -80,16 +80,6 @@ public class TestUtils {
     }
 
     /**
-     * Returns a module used by running application
-     * @param <T> module type
-     * @param moduleClass module class
-     * @return module instance associated with given class
-     */
-    public static <T extends Module> T getApplicationModule(Class<T> moduleClass) {
-        return getRunningApplication().getModule(moduleClass);
-    }
-
-    /**
      * Returns a service used by running application
      * @param <T> module type
      * @param serviceClass service class

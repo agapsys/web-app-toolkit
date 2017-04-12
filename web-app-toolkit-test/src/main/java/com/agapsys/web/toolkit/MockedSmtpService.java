@@ -17,26 +17,26 @@
 package com.agapsys.web.toolkit;
 
 import com.agapsys.mail.Message;
-import com.agapsys.web.toolkit.modules.SmtpModule;
+import com.agapsys.web.toolkit.services.SmtpService;
 
-public class MockedSmtpModule extends SmtpModule {
-    
+public class MockedSmtpService extends SmtpService {
+
     private Message message = null;
 
     public void reset() {
         message = null;
     }
-    
+
     public boolean isMessageSent() {
         return message != null;
     }
-    
+
     public Message getMessage() {
         return message;
     }
-    
-    @Override
-    protected void onSendMessage(Message message) {
-        this.message = message;
-    }
+
+//    @Override
+//    protected void onSendMessage(Message message) {
+//        this.message = message;
+//    }
 }
