@@ -81,12 +81,12 @@ public class TestUtils {
 
     /**
      * Returns a service used by running application
-     * @param <T> module type
+     * @param <T> service type
      * @param serviceClass service class
      * @return service instance associated with given class
      */
-    public static <T extends Service> T getApplicationService(Class<T> serviceClass) {
-        return getRunningApplication().getService(serviceClass);
+    public static <T extends Service> T getApplicationService(Class<T> serviceClass, boolean autoRegistration) {
+        return getRunningApplication().getService(serviceClass, autoRegistration);
     }
 
     /**

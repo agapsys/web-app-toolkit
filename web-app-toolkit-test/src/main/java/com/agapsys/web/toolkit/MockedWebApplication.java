@@ -24,7 +24,7 @@ import javax.servlet.annotation.WebListener;
 
 @WebListener
 public class MockedWebApplication extends AbstractWebApplication {
-
+    
     @Override
     public String getRootName() {
         return "test-app";

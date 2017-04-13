@@ -35,8 +35,8 @@ public class MockedSmtpService extends SmtpService {
         return message;
     }
 
-//    @Override
-//    protected void onSendMessage(Message message) {
-//        this.message = message;
-//    }
+    @Override
+    public void sendMessage(Message message) {
+        this.message = message;
+    }
 }
