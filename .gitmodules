@@ -1,6 +1,6 @@
 [submodule "web-app-toolkit-core"]
 	path = web-app-toolkit-core
-	url = ../web-app-toolkit-core.git
+	url = https://github.com/agapsys/web-app-toolkit-core.git
 [submodule "web-app-toolkit-test"]
 	path = web-app-toolkit-test
-	url = ../web-app-toolkit-test.git
+	url = https://github.com/agapsys/web-app-toolkit-test.git
